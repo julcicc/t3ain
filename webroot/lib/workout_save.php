@@ -12,4 +12,5 @@ function new_swim($title, $duration_string, $distance_mts, $kcal, $tss, $intensi
 , $hr_min, $hr_avg, $hr_max, $description ) {
 
     $durations_secs = time_string_to_secs($duration_string);
+
 }
