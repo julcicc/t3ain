@@ -28,12 +28,16 @@ force_auth();
 
   <body>
 <script>
+    <?php
+/*
     $(function() {
         if ("<?php echo $_REQUEST["sport"]?>" > 0 ) {
             $("#sport_sel").val("<?php echo $_REQUEST["sport"]?>");
             display_new($("#sport_sel").val());
         }
     })
+*/
+    ?>
 </script>
 <script>
     function display_new(sport_type) {
@@ -93,14 +97,14 @@ Run New
 Other New
 </div>
 
-    <div id="footer">
-                <div class="pull-left" id="copyright"><h4><small>Copyright (C) 2000-2013 Imaweb 2000 S.L.</small></h4></div>
-                <div class="pull-right">
-                <img src='https://crmauto.imaweb.net/img/info_imaweb.jpg'/><img src='https://crmauto.imaweb.net/img/info_iso9001.jpg'/>
-                </div>
-          </div>
-      </div>
+<div id="footer">
+    <div class="pull-left" id="copyright"><h4><small>T3AIN App System</small></h4></div>
+    <div class="pull-right">
+        Footer Logos
     </div>
+</div>
+</div>
+</div>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

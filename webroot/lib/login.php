@@ -1,10 +1,5 @@
 <?php
 
-if (isset($_REQUEST['logout'])) {
-    force_logout();
-}
-
-
 function check_logged_user() {
     return getsession("user_ok");
 }
@@ -27,7 +22,6 @@ function process_login($username, $pass) {
         putsession("user_full_name", $row['full_name']);
 
         header("location:" . HTROOT . "/index.php");
-	exit;
     }
     else {
         return "Please enter a valid username and password";
@@ -35,12 +29,6 @@ function process_login($username, $pass) {
     //plog_debug($_SESSION);
 }
 
-function force_logout() {
-    plog_debug("Loging out!!");
-    delsession("user_ok");
-    delsession("user_full_name");
-    header("location:" . HTROOT . "/login.php");
-}
 function force_auth() {
     plog_debug("Forcing auth:", $_SESSION);
     if (!check_logged_user()) {
@@ -48,5 +36,12 @@ function force_auth() {
         exit;
     }
 
+    if (getvar('logout')==1) {
+        plog_debug("Loging out!!");
+        delsession("user_ok");
+        delsession("user_full_name");
+        header("location:" . HTROOT . "/login.php");
+        exit;
+    }
 }
 
